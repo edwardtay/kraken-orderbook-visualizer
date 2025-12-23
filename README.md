@@ -1,6 +1,6 @@
 # Kraken Orderbook Visualizer
 
-A professional-grade real-time orderbook visualization tool with time-travel capabilities, built on the [Kraken WebSocket SDK](https://github.com/edwardtay/kraken-sdk).
+A professional-grade real-time orderbook visualization tool with time-travel capabilities, built on the [Kraken WebSocket SDK](https://github.com/edwardtay/kraken-ws-sdk).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
