@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+kraken-strategy/frontend/node_modules/
+
+# Build outputs
+backend/target/
+frontend/build/
+kraken-strategy/frontend/build/
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Database & data
+backend/data/
+data/
+
+# Private folders at any level
+private/
+**/private/
+
+# Secrets
+*.pem
+*.key

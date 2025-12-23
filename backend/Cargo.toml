@@ -1,0 +1,37 @@
+[package]
+name = "orderbook-visualizer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Kraken WebSocket SDK - use local path for development
+kraken-ws-sdk = { path = "../.." }
+
+# WebSocket client (fallback)
+tokio-tungstenite = { version = "0.21", features = ["native-tls"] }
+
+# Web framework
+tokio = { version = "1.0", features = ["full"] }
+warp = "0.3"
+futures-util = "0.3"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Time and decimal
+chrono = { version = "0.4", features = ["serde"] }
+rust_decimal = { version = "1.0", features = ["serde"] }
+
+# UUID
+uuid = { version = "1.0", features = ["v4", "serde"] }
+
+# Async utilities
+async-trait = "0.1"
+
+# Storage
+sled = "0.34"  # Embedded database for time-series storage
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = "0.3"

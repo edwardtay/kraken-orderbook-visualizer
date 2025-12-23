@@ -1,0 +1,109 @@
+/* Mini Candlestick Strip - Contextual, Unobtrusive */
+
+.mini-candlestick-strip {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.mini-candlestick-strip.dark {
+  --bg-secondary: #161b22;
+  --border-color: #30363d;
+  --text-muted: #6e7681;
+  --bid-color: #3fb950;
+  --ask-color: #f85149;
+  --accent: #58a6ff;
+}
+
+/* Header - Tiny controls */
+.strip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.strip-timeframe {
+  display: flex;
+  gap: 2px;
+}
+
+.tf-btn {
+  padding: 2px 6px;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 9px;
+  font-family: 'SF Mono', 'Consolas', monospace;
+  transition: all 0.15s;
+}
+
+.tf-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-color);
+}
+
+.tf-btn.active {
+  background: var(--accent);
+  color: #0d1117;
+  border-color: var(--accent);
+}
+
+.strip-change {
+  font-size: 10px;
+  font-weight: 600;
+  font-family: 'SF Mono', 'Consolas', monospace;
+}
+
+.strip-change.positive {
+  color: var(--bid-color);
+}
+
+.strip-change.negative {
+  color: var(--ask-color);
+}
+
+/* Chart container */
+.strip-chart {
+  height: 60px;
+  position: relative;
+  background: transparent;
+}
+
+/* Loading/Error states - minimal */
+.strip-loading,
+.strip-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.strip-loading {
+  animation: pulse-dot 1s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.strip-error {
+  color: var(--ask-color);
+  font-weight: bold;
+}
+
+/* Ensure lightweight-charts canvas inherits transparency */
+.strip-chart canvas {
+  background: transparent !important;
+}
+
